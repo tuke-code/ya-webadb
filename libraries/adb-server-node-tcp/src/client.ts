@@ -2,13 +2,13 @@ import type { IpcSocketConnectOpts, TcpSocketConnectOpts } from "net";
 
 import { AdbServerClient } from "@yume-chan/adb";
 
-import { AdbServerNodeTcpConnector } from "./connector.js";
+import { AdbServerNodeJsTcpConnector } from "./connector.js";
 
 /**
  * An {@link AdbServerClient} implementation using
- * {@link AdbServerNodeTcpConnector} to connect to ADB server.
+ * {@link AdbServerNodeJsTcpConnector} to connect to ADB server.
  *
- * Constructors must be synced with {@link AdbServerNodeTcpConnector} constructors.
+ * Constructors must be synced with {@link AdbServerNodeJsTcpConnector} constructors.
  */
 export class AdbServerNodeJsClient extends AdbServerClient {
     /**
@@ -94,7 +94,7 @@ export class AdbServerNodeJsClient extends AdbServerClient {
               })
             | IpcSocketConnectOpts,
     ) {
-        const connector = new AdbServerNodeTcpConnector(spec as never);
+        const connector = new AdbServerNodeJsTcpConnector(spec as never);
         super(connector);
     }
 }

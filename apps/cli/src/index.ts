@@ -9,7 +9,7 @@ import { release, type } from "node:os";
 import { basename } from "node:path";
 
 import { AdbServerClient, AdbSync, LinuxFileType, Ref } from "@yume-chan/adb";
-import { AdbServerNodeTcpConnector } from "@yume-chan/adb-server-node-tcp";
+import { AdbServerNodeJsTcpConnector } from "@yume-chan/adb-server-node-tcp";
 import { ReadableStream, WritableStream } from "@yume-chan/stream-extra";
 import { Option, program } from "commander";
 import { dump } from "wtfnode";
@@ -50,7 +50,7 @@ program.optionsGroup();
 
 function createClient() {
     const opts: { H: string; P: number } = program.opts();
-    const connection = new AdbServerNodeTcpConnector({
+    const connection = new AdbServerNodeJsTcpConnector({
         host: opts.H,
         port: opts.P,
     });

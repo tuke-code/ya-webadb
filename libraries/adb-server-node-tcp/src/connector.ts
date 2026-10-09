@@ -146,7 +146,7 @@ function getServerPort() {
 /**
  * An {@link AdbServerClient.ServerConnector} implementation for Node.js.
  */
-export class AdbServerNodeTcpConnector
+export class AdbServerNodeJsTcpConnector
     implements AdbServerClient.ServerConnector
 {
     readonly spec: SocketConnectOpts;
@@ -154,7 +154,7 @@ export class AdbServerNodeTcpConnector
     readonly #listeners = new Map<string, Server>();
 
     /**
-     * Creates an new instance of {@link AdbServerNodeTcpConnector}
+     * Creates an new instance of {@link AdbServerNodeJsTcpConnector}
      * by connecting to the default socket spec.
      *
      * If environment variable `ADB_SERVER_SOCKET` is set,
@@ -168,7 +168,7 @@ export class AdbServerNodeTcpConnector
 
     /**
      *
-     * Creates an new instance of {@link AdbServerNodeTcpConnector}
+     * Creates an new instance of {@link AdbServerNodeJsTcpConnector}
      * by connecting to the specified socket spec.
      *
      * @param spec An ADB socket spec.
@@ -194,7 +194,7 @@ export class AdbServerNodeTcpConnector
     constructor(spec: string);
 
     /**
-     * Creates an new instance of {@link AdbServerNodeTcpConnector}
+     * Creates an new instance of {@link AdbServerNodeJsTcpConnector}
      * using the specified TCP connect options.
      *
      * Unlike the original Node.js TCP connect options, the `port` field is also optional.
@@ -219,7 +219,7 @@ export class AdbServerNodeTcpConnector
     );
 
     /**
-     * Creates an new instance of {@link AdbServerNodeTcpConnector}
+     * Creates an new instance of {@link AdbServerNodeJsTcpConnector}
      * using the specified Node.js Unix domain socket connect options.
      *
      * Not supported on Windows, because ADB server can't listen on Named Pipes on Windows.

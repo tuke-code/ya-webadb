@@ -65,7 +65,7 @@ class VendorKeyError extends KeyError {
     }
 }
 
-export class TangoNodeStorage implements TangoKeyStorage {
+export class TangoNodeJsStorage implements TangoKeyStorage {
     static readonly KeyError = KeyError;
     static readonly InvalidKeyError = InvalidKeyError;
     static readonly VendorKeyError = VendorKeyError;
@@ -232,7 +232,7 @@ export class TangoNodeStorage implements TangoKeyStorage {
     }
 }
 
-export namespace TangoNodeStorage {
+export namespace TangoNodeJsStorage {
     export type KeyError = typeof KeyError;
     export type InvalidKeyError = typeof InvalidKeyError;
     export type VendorKeyError = typeof VendorKeyError;
