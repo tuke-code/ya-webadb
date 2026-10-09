@@ -34,7 +34,7 @@ for (const p of packages) {
             Object.entries(packageJson.dependencies)
                 .filter(([name]) => {
                     if (
-                        packageJson.name === "@yume-chan/eslint-config" &&
+                        packageJson.name === "@yume-chan/lint" &&
                         name === "eslint"
                     ) {
                         return true;
@@ -58,14 +58,12 @@ for (const p of packages) {
         );
 
         if (packageJson.scripts) {
-            packageJson.devDependencies["@yume-chan/eslint-config"] =
-                "workspace:^1.0.0";
-            packageJson.scripts.lint =
-                "run-eslint && prettier src/**/*.ts --write --tab-width 4";
+            packageJson.devDependencies["@yume-chan/lint"] = "workspace:^";
+            packageJson.scripts.lint = "run-lint";
 
             if (packageJson.scripts.test) {
                 packageJson.devDependencies["@yume-chan/test-runner"] =
-                    "workspace:^1.0.0";
+                    "workspace:^";
                 packageJson.devDependencies["@types/node"] = "^20.14.9";
                 packageJson.scripts.test = "run-test";
             }

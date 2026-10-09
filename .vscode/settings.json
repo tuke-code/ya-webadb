@@ -101,7 +101,7 @@
     "eslint.debug": true,
     "eslint.nodePath": "./toolchain/eslint-config/node_modules/eslint",
     "eslint.options": {
-        "overrideConfigFile": "./node_modules/@yume-chan/eslint-config/eslint.config.js"
+        "overrideConfigFile": "./node_modules/@yume-chan/lint/eslint.config.js"
     },
     "eslint.problems.shortenToSingleLine": true,
     "eslint.workingDirectories": [
